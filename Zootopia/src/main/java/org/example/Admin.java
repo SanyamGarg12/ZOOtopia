@@ -1,5 +1,5 @@
 package org.example;
-
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -100,8 +100,14 @@ public class Admin {
         this.Attractions.add(attraction);
     }
 
-    public void removeAttraction(Attraction attraction) {
+    public int removeAttraction(Attraction attraction) {
+        for(Visitor v: this.visiors){
+            if(v.getAttractions().contains(attraction)){
+                return -1;
+            }
+        }
         this.Attractions.remove(attraction);
+        return 1;
     }
 
     public void viewAttractions() {
@@ -165,25 +171,6 @@ public class Admin {
         this.mammals.add(mammal);
     }
 
-    public void removeMammal() {
-        System.out.println("Enter Animal name: ");
-        String s = scanner.next();
-        System.out.println("Enter Description: ");
-        String ss = scanner.next();
-        int zz = -1;
-        for (Mammal x : mammals) {
-            if (x.getName().equals(s) && x.getDESCR().equals(ss)) {
-                zz = 1;
-                this.mammals.remove(x);
-                System.out.println("Animal removed Successfully!\n");
-                break;
-            }
-        }
-        if (zz == -1) {
-            System.out.println("Animal Not Found\n");
-        }
-    }
-
     public ArrayList<Reptile> getReptiles() {
         return this.reptiles;
     }
@@ -192,50 +179,12 @@ public class Admin {
         this.reptiles.add(reptile);
     }
 
-    public void removeReptile() {
-        System.out.println("Enter Animal name: ");
-        String s = scanner.next();
-        System.out.println("Enter Description: ");
-        String ss = scanner.next();
-        int zz = -1;
-        for (Reptile x : reptiles) {
-            if (x.getName().equals(s) && x.getDESCR().equals(ss)) {
-                zz = 1;
-                this.reptiles.remove(x);
-                System.out.println("Animal removed Successfully!\n");
-                break;
-            }
-        }
-        if (zz == -1) {
-            System.out.println("Animal Not Found\n");
-        }
-    }
-
     public ArrayList<Amphibian> getAmphibians() {
         return this.amphibians;
     }
 
     public void addAmphibian(Amphibian amphibian) {
         this.amphibians.add(amphibian);
-    }
-
-    public void removeAmphibian() {
-        System.out.println("Enter Animal name: ");
-        String s = scanner.next();
-        System.out.println("Enter Description: ");
-        String ss = scanner.next();
-        int zz = -1;
-        for (Amphibian x : amphibians) {
-            if (x.getName().equals(s) && x.getDESCR().equals(ss)) {
-                zz = 1;
-                this.amphibians.remove(x);
-                System.out.println("Animal removed Successfully!\n");
-                break;
-            }
-        }
-        if (zz == -1) {
-            System.out.println("Animal Not Found\n");
-        }
     }
 
     public void viewAnimals() {
@@ -249,10 +198,6 @@ public class Admin {
         for (Amphibian a : amphibians) {
             a.view();
         }
-    }
-
-    public void addDiscount(Coupon d) {
-        this.discounts.add(d);
     }
 
     public int addAnimal(String animalName, String DESCR, String animalType, String animalSound) {
@@ -330,5 +275,9 @@ public class Admin {
 
     public int getTotalAnimals() {
         return this.reptiles.size() + this.amphibians.size() + this.mammals.size();
+    }
+
+    public void sortDeals(){
+        Collections.sort(this.deals,new DealComparator());
     }
 }

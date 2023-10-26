@@ -86,12 +86,8 @@ public class Visitor {
         this.attractions.add(a);
     }
 
-    public void viewAttractions() {
-        int zz = 1;
-        for (Attraction a : this.attractions) {
-            a.view(zz);
-            zz++;
-        }
+    public ArrayList<Attraction> getAttractions() {
+        return this.attractions;
     }
 
     public void removeCoupon(Coupon c) {

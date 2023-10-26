@@ -17,7 +17,7 @@ public class Main {
         admin.addDeal(customDeal1);
         System.out.printf("Welcome to ZOOtopia!\n");
         Scanner sc = new Scanner(System.in);
-        for (;;) {
+        for (; ; ) {
             System.out.printf(
                     "1. Enter as Admin\n" + //
                             "2. Enter as a Visitor\n" + //
@@ -94,9 +94,13 @@ public class Main {
                                                 int attractionNo2 = sc.nextInt();
                                                 sc.nextLine();
                                                 if (attractionNo2 <= admin.getAttraction().size()) {
-                                                    admin.removeAttraction(
+                                                    int res = admin.removeAttraction(
                                                             admin.getAttraction().get(attractionNo2 - 1));
-                                                    System.out.printf("Attraction Removed!\n");
+                                                    if (res == 1) {
+                                                        System.out.printf("Attraction Removed!\n");
+                                                    } else {
+                                                        System.out.println("Cant remove as tickets sold\n");
+                                                    }
                                                 } else {
                                                     System.out.printf("Invalid number selected\n");
                                                 }
@@ -729,6 +733,7 @@ public class Main {
                                                             float revenue = -1;
                                                             Deal dummy = new Deal(-1, 0);
                                                             int tester = -1;
+                                                            admin.sortDeals();
                                                             for (Deal d : admin.getDeals()) {
                                                                 if (d.getMinTicket() <= tickets) {
                                                                     System.out.printf("You get " + d.getDiscount()

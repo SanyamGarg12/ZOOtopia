@@ -28,6 +28,7 @@ public class Deal {
     public float getDiscount() {
         return this.dealDiscount;
     }
+
     public int getMinTicket() {
         return this.minTickets;
     }

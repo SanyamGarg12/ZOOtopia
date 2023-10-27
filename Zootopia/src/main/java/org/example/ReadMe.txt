@@ -4,12 +4,7 @@ Assumptions:
 3. 2 coupons are present by default(minor and senior).
 4. 2 Special Deals are present by default
 5. Taking price as input in add attraction, also making it open by defualt!.
+6. Whenever asked for animal type input, you should give Mammal, Reptile, Amphibian **Take care of Uppercase letters.
 
 HOME_FOLDER = Zootopia
 
-All the commands should be run on the terminal in the HOME_FOLDER unless otherwise specified.
-
-0) Download the src code folder from Classroom and unzip.
-1) mvn clean
-2) mvn compile
-3) mvn package

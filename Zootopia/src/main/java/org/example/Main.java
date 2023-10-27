@@ -11,6 +11,18 @@ public class Main {
         Coupon seniorCoupon = new Coupon("Senior20", 20, "senior");
         Deal customDeal1 = new Deal(2, 15);
         Deal customDeal2 = new Deal(3, 30);
+        Reptile r1 = new Reptile("Snake","hiss","This is a snake");
+        Reptile r2 = new Reptile("Tortoise","Grunt","This is tortoise");
+        Amphibian a1 = new Amphibian("Frog","Croack","This is a frog");
+        Amphibian a2 = new Amphibian("Salamander","astos","This is astos's salamander");
+        Mammal m1 = new Mammal("Lion","Roar","This is a lion");
+        Mammal m2 = new Mammal("Elephant","trumpet","Hathi mera sathi #BroCode #Trending");
+        admin.addMammal(m1);
+        admin.addMammal(m2);
+        admin.addAmphibian(a1);
+        admin.addAmphibian(a2);
+        admin.addReptile(r1);
+        admin.addReptile(r2);
         admin.addCoupon(seniorCoupon);
         admin.addCoupon(minorCoupon);
         admin.addDeal(customDeal2);

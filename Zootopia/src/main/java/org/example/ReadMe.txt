@@ -6,6 +6,7 @@ Assumptions:
 5. Taking price as input in add attraction, also making it open by defualt!.
 6. Whenever asked for animal type input, you should give Mammal, Reptile, Amphibian **Take care of Uppercase letters.
 7. 6 animals are hardcoded in start of Main.java file for ease of testing.
+8. method names are self defined in name so i dont think there is need for comments.
 
 **pom.xml is present in Zootopia folder and whole source code is in src.**
 

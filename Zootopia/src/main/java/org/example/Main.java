@@ -584,10 +584,10 @@ public class Main {
                                     }
                                     break;
                                 case 6:
-                                    System.out.printf("Visitor Stats:\n");
-                                    System.out.printf("Total Visitors: " + admin.getVisitors().size());
-                                    System.out.printf("Total Revenue: " + admin.getRevenue());
-                                    System.out.printf("Popular Attractions :");
+                                    System.out.print("Visitor Stats:\n");
+                                    System.out.println("Total Visitors: " + admin.getVisitors().size());
+                                    System.out.println("Total Revenue: " + admin.getRevenue());
+                                    System.out.println("Popular Attractions :");
                                     admin.viewAttractions();
                                     break;
                                 case 7:
@@ -773,7 +773,7 @@ public class Main {
                                                     break;
                                                 case 6:
                                                     while (true) {
-                                                        System.out.printf("Visit Animals:\n" + //
+                                                        System.out.printf(" Select One\n" + //
                                                                 "1. Feed Animals\n" + //
                                                                 "2. Read Animals\n" + //
                                                                 "3. Exit\n");
@@ -790,7 +790,7 @@ public class Main {
                                                                     for (Mammal m : admin.getMammals()) {
                                                                         if (count == animalNo) {
                                                                             System.out.println("Name: " + m.getName()
-                                                                                    + "-> " + m.getSound() + "!");
+                                                                                    + "-> " + m.getSound() + "!" + " Thanks for feeding");
                                                                             break;
                                                                         }
                                                                         count++;
@@ -798,7 +798,7 @@ public class Main {
                                                                     for (Reptile m : admin.getReptiles()) {
                                                                         if (count == animalNo) {
                                                                             System.out.println("Name: " + m.getName()
-                                                                                    + "-> " + m.getSound() + "!");
+                                                                                    + "-> " + m.getSound() + "!" + " Thanks for feeding");
                                                                             break;
                                                                         }
                                                                         count++;
@@ -806,7 +806,7 @@ public class Main {
                                                                     for (Amphibian m : admin.getAmphibians()) {
                                                                         if (count == animalNo) {
                                                                             System.out.println("Name: " + m.getName()
-                                                                                    + "-> " + m.getSound() + "!");
+                                                                                    + "-> " + m.getSound() + "!" + " Thanks for feeding");
                                                                             break;
 
                                                                         }
@@ -827,6 +827,7 @@ public class Main {
                                                                         if (count == animalNo2) {
                                                                             System.out.println("Name: " + m.getName()
                                                                                     + "-> " + m.getDESCR());
+                                                                            count = -10;
                                                                             break;
                                                                         }
                                                                         count++;
@@ -835,6 +836,7 @@ public class Main {
                                                                         if (count == animalNo2) {
                                                                             System.out.println("Name: " + m.getName()
                                                                                     + "-> " + m.getDESCR());
+                                                                            count = -10;
                                                                             break;
                                                                         }
                                                                         count++;
@@ -843,6 +845,7 @@ public class Main {
                                                                         if (count == animalNo2) {
                                                                             System.out.println("Name: " + m.getName()
                                                                                     + "-> " + m.getDESCR());
+                                                                            count = -10;
                                                                             break;
                                                                         }
                                                                         count++;
@@ -861,6 +864,7 @@ public class Main {
                                                             break;
                                                         }
                                                     }
+                                                    break;
                                                 case 7:
                                                     System.out.printf("Attractions: \n");
                                                     admin.viewAttractions();

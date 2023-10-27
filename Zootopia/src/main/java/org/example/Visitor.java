@@ -69,8 +69,29 @@ public class Visitor {
                     }
                 }
             } else {
-                System.out.println("Invalid number selected, Unable to buy membership!\n");
-
+                System.out.println("*No coupon Applied*");
+                if(s.equals("Basic")){
+                    if(this.getBalance()<20) {
+                        System.out.println("Insufficient Balance");
+                    }
+                    else {
+                        this.setMembership(s);
+                        newBalance = 20;
+                        this.changeBalance(20);
+                        System.out.println("now your balance is : " + this.getBalance());
+                    }
+                }
+                else{
+                    if(this.getBalance()<50) {
+                        System.out.println("Insufficient Balance");
+                    }
+                    else {
+                        this.setMembership(s);
+                        newBalance = 50;
+                        this.changeBalance(50);
+                        System.out.println("now your balance is : " + this.getBalance());
+                    }
+                }
             }
         }
         return newBalance;
@@ -165,6 +186,7 @@ public class Visitor {
     public float buyTickets(Attraction attr, int tikets, Deal d) {
         float revenue = -1;
         revenue = attr.getPrice() * tikets * (100 - d.getDiscount()) / 100;
+        this.viewCoupons();
         System.out.println("Select Coupon Number to apply:");
         int couponNo = sc.nextInt();
         sc.nextLine();

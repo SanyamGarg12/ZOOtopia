@@ -4,8 +4,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Admin {
-    private final String name = "sanyam";
-    private final String password = "448";
+    private final String name = "admin";
+    private final String password = "admin123";
     private ArrayList<Mammal> mammals = new ArrayList<Mammal>();
     private ArrayList<Reptile> reptiles = new ArrayList<Reptile>();
     private ArrayList<Amphibian> amphibians = new ArrayList<Amphibian>();

@@ -616,7 +616,7 @@ public class Main {
                             }
                         }
                     } else {
-                        System.out.printf("Login Failed!");
+                        System.out.printf("Login Failed!\n");
                         break;
                     }
                     break;
@@ -651,8 +651,10 @@ public class Main {
                                 String loginEmail = sc.nextLine();
                                 System.out.printf("Enter Visitor password: ");
                                 String loginPass = sc.nextLine();
+                                int found = 0;
                                 for (Visitor x : admin.getVisitors()) {
                                     if (x.getEmail().equals(loginEmail) && x.getPass().equals(loginPass)) {
+                                        found = 1;
                                         System.out.printf("Login Successful!\n");
                                         while (true) {
                                             System.out.printf("1. Explore the Zoo\n" + //
@@ -748,7 +750,7 @@ public class Main {
                                                             admin.sortDeals();
                                                             for (Deal d : admin.getDeals()) {
                                                                 if (d.getMinTicket() <= tickets) {
-                                                                    System.out.printf("You get " + d.getDiscount()
+                                                                    System.out.println("You get " + d.getDiscount()
                                                                             + "% off on this deal\n");
                                                                     revenue = x.buyTickets(
                                                                             admin.getAttraction().get(attractionNo - 1),
@@ -803,6 +805,7 @@ public class Main {
                                                                         if (count == animalNo) {
                                                                             System.out.println("Name: " + m.getName()
                                                                                     + "-> " + m.getSound() + "!" + " Thanks for feeding");
+                                                                            count = -100;
                                                                             break;
                                                                         }
                                                                         count++;
@@ -811,6 +814,7 @@ public class Main {
                                                                         if (count == animalNo) {
                                                                             System.out.println("Name: " + m.getName()
                                                                                     + "-> " + m.getSound() + "!" + " Thanks for feeding");
+                                                                            count = -100;
                                                                             break;
                                                                         }
                                                                         count++;

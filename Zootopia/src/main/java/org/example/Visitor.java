@@ -68,10 +68,8 @@ public class Visitor {
                         System.out.println("Now your balance is " + this.Balance);
                     }
                 }
-            } else if (couponNo == this.getCoupons().size() + 1) {
-                System.out.println("No coupon choosen\n");
             } else {
-                System.out.println("Invalid number selected\n");
+                System.out.println("Invalid number selected, Unable to buy membership!\n");
 
             }
         }
@@ -100,7 +98,6 @@ public class Visitor {
             c.view(ind);
             ind++;
         }
-        System.out.println(ind + ". No Coupon\n");
     }
 
     public ArrayList<Coupon> getCoupons() {
@@ -168,6 +165,15 @@ public class Visitor {
     public float buyTickets(Attraction attr, int tikets, Deal d) {
         float revenue = -1;
         revenue = attr.getPrice() * tikets * (100 - d.getDiscount()) / 100;
+        System.out.println("Select Coupon Number to apply:");
+        int couponNo = sc.nextInt();
+        sc.nextLine();
+        if (couponNo <= this.getCoupons().size()) {
+            revenue = revenue * (100 - this.getCoupons().get(couponNo - 1).getDiscount()) / 100;
+        }
+        else{
+            System.out.println("No coupon applied as invalid number selcted!");
+        }
         if (revenue > this.getBalance()) {
             System.out.println("Insufficient Balance");
             revenue = -1;
